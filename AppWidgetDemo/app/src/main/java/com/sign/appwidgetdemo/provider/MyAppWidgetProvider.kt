@@ -6,6 +6,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.RemoteViews
+import com.sign.appwidgetdemo.R
 
 /**
  * @author: yongshengdev@163.com
@@ -34,6 +36,23 @@ class MyAppWidgetProvider : AppWidgetProvider() {
     override fun onUpdate(context: Context?, appWidgetManager: AppWidgetManager?, appWidgetIds: IntArray?) {
         super.onUpdate(context, appWidgetManager, appWidgetIds)
         Log.d(TAG, "-----------------onUpdate-------------------")
+        if (appWidgetIds == null) {
+            return
+        }
+        context?.let { ctx ->
+            appWidgetIds.forEach { appWidgetId ->
+                // 获取appWidgetManager
+                val appWidgetManager: AppWidgetManager = AppWidgetManager.getInstance(ctx)
+                // 获取RemoteViews
+                RemoteViews(ctx.packageName, R.layout.my_appwidget).also { remoteView ->
+                    // 更新视图
+//                    remoteView.setImageViewResource(R.id.image, resourceId)
+                    // 更新小组件
+                    appWidgetManager.updateAppWidget(appWidgetId, remoteView)
+                }
+            }
+
+        }
     }
 
     /**

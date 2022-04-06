@@ -4,7 +4,7 @@
     android:minWidth="250dp"
     android:minHeight="100dp"
     android:resizeMode="none"
-    android:updatePeriodMillis="3600000"
+    android:updatePeriodMillis="5000"
     android:widgetCategory="home_screen">
     <!--    当updatePeriodMillis的值小于30分钟时，系统会自动将更新频率设为30分钟-->
 
