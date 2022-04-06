@@ -4,8 +4,4 @@
     android:layout_height="100dp"
     android:background="#368BC34A">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
 </FrameLayout>
