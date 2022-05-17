@@ -6,8 +6,30 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.XposedModuleDemo" />
+        android:theme="@style/Theme.XposedModuleDemo">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 标识是Xposed模块 -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <!-- 模块描述 -->
+        <meta-data
+            android:name="xposeddescription"
+            android:value="小例子：拦截指定方法" />
+        <!-- Xposed api version -->
+        <meta-data
+            android:name="xposedminversion"
+            android:value="53" />
+    </application>
 
 </manifest>
