@@ -12,6 +12,8 @@ plugins {
 
     // Apply the Groovy plugin to add support for Groovy
     id 'groovy'
+
+    id 'maven-publish'
 }
 
 repositories {
@@ -58,5 +60,25 @@ tasks.named('check') {
 tasks.named('test') {
     // Use junit platform for unit tests.
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        hello(MavenPublication) {
+            // 插件的组id，建议为插件的包名
+            groupId 'com.sign.gradle'
+            // 插件名称
+            artifactId 'hello'
+            version '0.0.1'
+            from components.java
+        }
+    }
+    // 发布到maven远程仓库
+    repositories {
+        maven {
+            // $rootDir 表示你项目的根目录
+            url = "$rootDir/repo"
+        }
+    }
 }
 
