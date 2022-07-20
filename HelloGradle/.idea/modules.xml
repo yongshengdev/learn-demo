@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/HelloGradle.iml" filepath="$PROJECT_DIR$/.idea/modules/HelloGradle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HelloGradle.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HelloGradle.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin/HelloGradle.plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin/HelloGradle.plugin.iml" />
     </modules>
   </component>
